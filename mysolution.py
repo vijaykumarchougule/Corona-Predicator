@@ -26,8 +26,6 @@ if __name__ == '__main__':
     clf = LogisticRegression()
     clf.fit(X_train, Y_train)
 
-    file = open('important', 'wb')
-    pickle.dump(data, file)
-
-    inputfeatures = [101, 0, 22, -1, 1]
-    infprob = clf.predict_proba([inputfeatures])[0][1]
+    file = open('model.pkl', 'wb')
+    pickle.dump(clf, file)
+    file.close()
